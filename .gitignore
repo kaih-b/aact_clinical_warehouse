@@ -1,0 +1,15 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Python environments and caches
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Ignore raw data downloads
+data/
+*.csv
+
+# Ignore environment variables (where real passwords go later)
+.env
