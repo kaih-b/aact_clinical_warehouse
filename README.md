@@ -23,7 +23,7 @@ This project is built to be entirely reproducible. To spin up the database local
 
 ## Relationships Between Core Tables
 
-**Tables of interest:** `studies`, `sponsors`, `interventions`, `design`
+**Tables of interest:** `studies`, `sponsors`, `interventions`, `designs`
 
 #### Studies & Sponsors
 
