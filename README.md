@@ -21,6 +21,8 @@ This project is built to be entirely reproducible. To spin up the database local
    ```bash
    make up
 
+To run the ETL pipeline locally, download the AACT static files (`.txt`), create a `data/` directory in the root folder, and place the `.txt` files inside it before running `make etl`.
+
 ## Relationships Between Core Tables
 
 **Tables of interest:** `studies`, `sponsors`, `interventions`, `designs`
