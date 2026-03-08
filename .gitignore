@@ -7,8 +7,9 @@ __pycache__/
 .venv/
 venv/
 
-# Ignore raw data downloads
+# Ignore raw data downloads, local
 data/
+local/
 *.csv
 
 # Ignore environment variables (where real passwords go later)
