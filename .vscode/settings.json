@@ -7,8 +7,9 @@
             "port": 5432,
             "driver": "PostgreSQL",
             "name": "AACT Local",
+            "database": "aact",
             "username": "postgres",
-            "database": "aact"
+            "password": "1234"
         }
     ]
 }
