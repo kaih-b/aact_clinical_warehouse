@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 
 # Database connection string (matches docker-compose.yml)
 DB_USER = 'postgres'
-DB_PASSWORD = '5236'
+DB_PASSWORD = '1234'
 DB_HOST = 'localhost'
 DB_PORT = '5432'
 DB_NAME = 'aact'
