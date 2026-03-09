@@ -25,3 +25,12 @@ etl:
 # Run the validation report
 validate:
 	cd src && python validate.py
+
+# Build the views and analytics
+analytics:
+	@echo "Building Views..."
+	docker exec -i aact_postgres psql -U postgres -d aact < sql/views/01_vw_industry_sponsors.sql
+	docker exec -i aact_postgres psql -U postgres -d aact < sql/views/02_vw_phase3_designs.sql
+	docker exec -i aact_postgres psql -U postgres -d aact < sql/views/03_vw_top_sponsors.sql
+	@echo "Creating Cumulative Strategic Report..."
+	docker exec -i aact_postgres psql -U postgres -d aact < sql/analytics/08_final_competitive_landscape.sql
