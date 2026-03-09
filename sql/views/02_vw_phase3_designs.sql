@@ -10,5 +10,5 @@ SELECT
     d.masking
 FROM studies s
 LEFT JOIN designs d ON s.nct_id = d.nct_id
-WHERE s.phase = 'Phase 3'
+WHERE s.phase in ('PHASE3', 'PHASE2/PHASE3')
   AND s.start_date IS NOT NULL;
