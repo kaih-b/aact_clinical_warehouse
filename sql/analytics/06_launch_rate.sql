@@ -1,5 +1,5 @@
 -- Gather trial dates and calculate the row-level gaps (days between) using window functions
-WITH VelocityData AS (
+WITH LaunchRate AS (
     SELECT 
         i.sponsor_name,
         p.start_date,
@@ -18,7 +18,7 @@ SELECT
     COUNT(start_date) AS total_trials_analyzed,
     ROUND(AVG(days_between_launches), 1) AS avg_days_between_launches,
     MAX(days_between_launches) AS longest_gap_days
-FROM VelocityData
+FROM LaunchRate
 WHERE days_between_launches IS NOT NULL -- avoids first trials (no time between the first trial)
   AND days_between_launches >= 0 -- filters errors (< 0 gaps between trials)
 GROUP BY sponsor_name

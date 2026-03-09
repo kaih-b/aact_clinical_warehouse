@@ -1,4 +1,4 @@
--- Resources: https://www.thoughtspot.com/sql-tutorial/sql-window-functions; https://www.postgresql.org/docs/9.1/tutorial-window.html 
+-- Resources: https://www.thoughtspot.com/sql-tutorial/sql-window-functions; https://www.postgresql.org/docs/9.1/tutorial-window.html; https://learnsql.com/blog/sql-first-value-function/ 
 
 -- Purpose: perform a calculations across a set of rows that are somehow positionally related to the current row
 -- e.g. comparing a selected month to the month previous; creating a running total
@@ -18,3 +18,5 @@ FROM dataset
 -- ROW_NUMBER gives the row number; RANK works by row number and assigns duplicates the same value with skips; DENSE_RANK no skips
 -- NTILE distinguishes percentiles 
 -- LAG pulls from previous rows; LEAD pulls from subsequent rows (key in this application, see 06)
+
+-- FIRST_VALUE gives the first value of an ordered partition taken from a wider set
