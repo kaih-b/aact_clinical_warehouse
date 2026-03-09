@@ -5,11 +5,17 @@ SELECT
     name AS sponsor_name
 FROM sponsors
 WHERE lead_or_collaborator = 'lead'
-  AND name NOT ILIKE '%University%'
-  AND name NOT ILIKE '%School%'
-  AND name NOT ILIKE '%Hospital%'
-  AND name NOT ILIKE '%Institute%'
-  AND name NOT ILIKE '%National%'
-  AND name NOT ILIKE '%Cancer Center%'
-  AND name NOT ILIKE '%Medical Center%'
-  AND name not ILIKE '%Clinic%'
+AND name NOT ILIKE ANY (ARRAY[
+    '%University%',
+    '%School%',
+    '%Hospital%',
+    '%Hospices%',
+    '%Public%',
+    '%Publique%',
+    '%Institute%',
+    '%National%',
+    '%Cancer Center%',
+    '%Medical Center%',
+    '%Clinic%',
+    '%Centers for%'
+]);
