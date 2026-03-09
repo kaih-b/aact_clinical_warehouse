@@ -6,6 +6,9 @@ SELECT
 FROM sponsors
 WHERE lead_or_collaborator = 'lead'
   AND name NOT ILIKE '%University%'
+  AND name NOT ILIKE '%School%'
   AND name NOT ILIKE '%Hospital%'
   AND name NOT ILIKE '%Institute%'
-  AND name NOT ILIKE '%National%';
+  AND name NOT ILIKE '%National%'
+  AND name NOT ILIKE '%Cancer Center%'
+  AND name not ILIKE '%Clinic%'
