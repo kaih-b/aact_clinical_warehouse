@@ -33,4 +33,4 @@ analytics:
 	docker exec -i aact_postgres psql -U postgres -d aact < sql/views/02_vw_phase3_designs.sql
 	docker exec -i aact_postgres psql -U postgres -d aact < sql/views/03_vw_top_sponsors.sql
 	@echo "Creating Cumulative Strategic Report..."
-	docker exec -i aact_postgres psql -U postgres -d aact < sql/analytics/08_final_competitor_landscape.sql
+	docker exec -i aact_postgres psql -U postgres -d aact < sql/analytics/08_final_competitive_landscape.sql
