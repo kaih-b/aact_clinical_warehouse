@@ -1,4 +1,4 @@
--- Is there a relationship between trial design (masking level) and chance of termination?
+-- Is there a relationship between late-stage trial design (masking level) and chance of termination?
 WITH TrialOutcomes AS (
     SELECT 
         masking,
