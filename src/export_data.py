@@ -18,7 +18,7 @@ def export_for_tableau():
         logging.info(f"Created directory: {export_dir}")
     
     # Point to cumulative analytics query
-    sql_file_path = '../sql/analytics/08_final_competitor_landscape.sql'
+    sql_file_path = '../sql/analytics/08_final_competitive_landscape.sql'
     
     # Simple exception handling
     if not os.path.exists(sql_file_path):
@@ -40,5 +40,5 @@ def export_for_tableau():
     logging.info(f"Success! Exported {len(df)} rows to {output_path}")
 
 if __name__ == '__main__':
-    print("Initiating Tableau Data Export!")
+    print("\nInitiating Tableau Data Export!\n")
     export_for_tableau()
