@@ -7,8 +7,10 @@ __pycache__/
 .local/
 local/
 
-# Ignore raw data
+# Ignore data
 data/
+exports/
+*.txt
 *.csv
 
 # Ignore environment variables
