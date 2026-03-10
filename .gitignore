@@ -4,13 +4,12 @@
 # Ignore Python environments and caches
 __pycache__/
 *.pyc
-.venv/
-venv/
-
-# Ignore raw data downloads, local
-data/
+.local/
 local/
+
+# Ignore raw data
+data/
 *.csv
 
-# Ignore environment variables (where real passwords go later)
+# Ignore environment variables
 .env
