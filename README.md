@@ -46,8 +46,8 @@ The `designs` table tracks structural procedures like `masking`, `allocation`, a
 ### Analytical Logic
 The analytics layer utilizes advanced SQL to extract business value from clinical metadata:
 - **Launch Rate**: Utilizes window functions (`LAG` and `PARTITION BY`) to calculate the trial launch cadence, allowing for a direct comparison of operational speed between industry leaders.
-- **Success Benchmarking**:Employs common table expressions (CTEs) to aggregate trial termination rates against specific experimental designs in an attempt to identify correlation between design and termination rate.
-- **Modular Modeling**: Developed a suite of SQL viewsto standardize data, robustly filtering out non-industry records to focus strictly on corporate biopharma competition.
+- **Success Benchmarking**: Employs common table expressions (CTEs) to aggregate trial termination rates against specific experimental designs in an attempt to identify correlation between design and termination rate.
+- **Modular Modeling**: Developed a suite of SQL views to standardize data, robustly filtering out non-industry records to focus strictly on corporate biopharma competition.
 
 ### Automated Data Bridge
 To ensure the project remains reproducible, the system includes a `Makefile` driven export pipeline. Running `make export` triggers a Python-SQL bridge that executes the final strategic query and generates a cleaned `competitor_data.csv`. This file is structurally fit for BI tools such as Tableau and PowerBI.
