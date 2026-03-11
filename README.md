@@ -39,7 +39,7 @@ The `designs` table tracks structural procedures like `masking`, `allocation`, a
 
 ## Technical Features
 
-### 1Infrastructure
+### Infrastructure
 - **Containerization:** The entire warehouse is managed via `Docker Compose`, ensuring an environment that isolates the database from the local OS.
 - **Database Optimization:** Implemented **B-Tree Indexing** on key columns `nct_id` and `sponsor_name` across all core tables. This optimization reduced query execution time for Phase 3 analytical joins by over 80%, enabling rapid iteration on large datasets.
 
