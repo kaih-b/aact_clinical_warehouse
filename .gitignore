@@ -9,7 +9,7 @@ local/
 
 # Ignore data
 data/
-exports/
+export/
 *.txt
 *.csv
 
