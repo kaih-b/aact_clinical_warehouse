@@ -9,6 +9,9 @@ SELECT
         WHEN name ILIKE '%Merck%' THEN 'Merck'
         WHEN name ILIKE '%Hoffmann-La Roche%' OR name ILIKE '%Roche%' THEN 'Roche'
         WHEN name ILIKE '%GlaxoSmithKline%' THEN 'GSK'
+        WHEN name ILIKE '%of Pfizer%' THEN 'Pfizer'
+        WHEN name ILIKE '%Sanofi%' THEN 'Sanofi'
+        WHEN name ILIKE '%AbbVie%' or name ILIKE "%Abbott" THEN 'AbbVie'
         ELSE name 
     END AS sponsor_name
 FROM sponsors
@@ -17,6 +20,8 @@ WHERE lead_or_collaborator = 'lead'
   AND name NOT ILIKE '%Hospital%'
   AND name NOT ILIKE '%Institute%'
   AND name NOT ILIKE '%National%'
+  AND name NOT ILIKE '%Department%'
+  AND name NOT ILIKE '%Office%'
   AND name not ILIKE '%School%'
   AND name not ILIKE '%Clinic%'
   AND name not ILIKE '%Centers for%'
