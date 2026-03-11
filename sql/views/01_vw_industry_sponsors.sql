@@ -2,6 +2,15 @@
 CREATE OR REPLACE VIEW vw_industry_sponsors AS
 SELECT 
     nct_id,
+    -- Fixes duplicates (e.g. "Novartis Pharmaceuticals" & "Novartis" would be separate entities)
+    CASE 
+        WHEN name ILIKE '%Novartis%' THEN 'Novartis'
+        WHEN name ILIKE '%Johnson & Johnson%' OR name ILIKE '%Janssen%' OR name ILIKE '%J&J%' THEN 'Johnson & Johnson'
+        WHEN name ILIKE '%Merck%' THEN 'Merck'
+        WHEN name ILIKE '%Hoffmann-La Roche%' OR name ILIKE '%Roche%' THEN 'Roche'
+        WHEN name ILIKE '%GlaxoSmithKline%' THEN 'GSK'
+        ELSE name 
+    END AS sponsor_name
     name AS sponsor_name
 FROM sponsors
 WHERE lead_or_collaborator = 'lead'
