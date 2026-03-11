@@ -11,7 +11,6 @@ SELECT
         WHEN name ILIKE '%GlaxoSmithKline%' THEN 'GSK'
         ELSE name 
     END AS sponsor_name
-    name AS sponsor_name
 FROM sponsors
 WHERE lead_or_collaborator = 'lead'
   AND name NOT ILIKE '%University%'
