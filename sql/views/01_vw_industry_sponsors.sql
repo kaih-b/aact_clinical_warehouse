@@ -11,8 +11,8 @@ SELECT
         WHEN name ILIKE '%GlaxoSmithKline%' THEN 'GSK'
         WHEN name ILIKE '%of Pfizer%' THEN 'Pfizer'
         WHEN name ILIKE '%Sanofi%' THEN 'Sanofi'
-        WHEN name ILIKE '%AbbVie%' or name ILIKE "%Abbott" THEN 'AbbVie'
-        ELSE name 
+        WHEN name ILIKE '%AbbVie%' OR name ILIKE '%Abbott%' THEN 'AbbVie'
+        ELSE name
     END AS sponsor_name
 FROM sponsors
 WHERE lead_or_collaborator = 'lead'
