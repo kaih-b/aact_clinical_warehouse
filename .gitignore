@@ -9,9 +9,9 @@ local/
 
 # Ignore data
 data/
-export/
 *.txt
 *.csv
+*.twb
 
 # Ignore environment variables
 .env
