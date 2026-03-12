@@ -26,6 +26,12 @@ etl:
 validate:
 	cd src && python validate.py
 
+
+# Optimize the database with indexes
+optimize:
+	@echo "Creating database indexes..."
+	docker exec -i aact_postgres psql -U postgres -d aact < sql/views/00_indexes.sql
+
 # Build the views and analytics
 analytics:
 	@echo "Building Views..."
@@ -34,11 +40,6 @@ analytics:
 	docker exec -i aact_postgres psql -U postgres -d aact < sql/views/03_vw_top_sponsors.sql
 	@echo "Creating Cumulative Strategic Report..."
 	docker exec -i aact_postgres psql -U postgres -d aact < sql/analytics/08_final_competitive_landscape.sql
-
-# Optimize the database with indexes
-optimize:
-	@echo "Creating database indexes..."
-	docker exec -i aact_postgres psql -U postgres -d aact < sql/views/00_indexes.sql
 
 # Export the cumulative report to CSV for Tableau
 export:
