@@ -3,10 +3,10 @@
 ## Summary
 This project is a containerized end-to-end data pipeline designed to transform raw clinical trial metadata into an actionable competitive analysis of the top players. By processing 570,000+ records from the AACT (Aggregate Analysis of ClinicalTrials.gov) database, the system identifies trends in late-stage trial success, launch rate, and operational efficiency.
 
-The project serves as a proof-of-concept for a full-stack data lifecycle, moving from infrastructure-as-code and automated ETL to relational modeling and culminating with an industry-style visualization in Tableau.
+The project serves as proof-of-concept for a full-stack data lifecycle, moving from infrastructure-as-code and automated ETL to relational modeling and culminating with an industry-style visualization in Tableau.
 
-## Final Product: The Efficiency Matrix
-[![Biopharma R&D Efficiency Dashboard](export/tableau_dashboard.png)](https://public.tableau.com/views/BiopharmaRDEfficiencyCompetitiveAnalysis/BiopharmaRD)
+## Final Product
+[![Biopharma R&D Efficiency Dashboard](export/tableau_dashboard.png)](https://public.tableau.com/app/profile/kai.henrikson.brandt/viz/Biopharma_RD_Analysis/BiopharmaRD)
 
 
 ## Project Phases & Milestones
@@ -57,32 +57,20 @@ The analytics layer utilizes advanced SQL to extract business value from clinica
 ### Automated Data Bridge
 To ensure the project remains reproducible, the system includes a `Makefile` driven export pipeline. Running `make export` triggers a Python-SQL bridge that executes the final strategic query and generates a cleaned `competitor_data.csv`. This file is structurally fit for BI tools such as Tableau and PowerBI.
 
-## Results Overview
+## Analysis
 
-| Sponsor | Total Phase 3 Trials | Success Rate (%) | Failure Rate (%) | Avg. Duration (Days) |
-| :--- | :---: | :---: | :---: | :---: |
-| Novartis | 891 | 90.3 | 9.7 | 974 |
-| GSK | 790 | 94.8 | 5.2 | 682 |
-| Merck | 683 | 87.8 | 12.2 | 971 |
-| Pfizer | 678 | 82.3 | 17.7 | 977 |
-| Sanofi | 656 | 88.3 | 11.7 | 888 |
-| AstraZeneca | 606 | 92.7 | 7.3 | 971 |
-| Johnson & Johnson | 492 | 90.2 | 9.8 | 994 |
-| Roche | 448 | 87.3 | 12.7 | 1485 |
-| Eli Lilly | 439 | 93.2 | 6.8 | 1019 |
-| AbbVie | 375 | 94.4 | 5.6 | 1099 |
-| Novo Nordisk A/S | 304 | 94.7 | 5.3 | 724 |
-| Bayer | 301 | 94.4 | 5.6 | 925 |
-| Organon and Co | 287 | 95.8 | 4.2 | 581 |
-| Takeda | 274 | 86.9 | 13.1 | 746 |
-| Amgen | 236 | 91.5 | 8.5 | 1241 |
-| Bristol-Myers Squibb | 208 | 91.3 | 8.7 | 1569 |
-| Boehringer Ingelheim | 202 | 93.1 | 6.9 | 922 |
-| Gilead Sciences | 177 | 81.9 | 18.1 | 1161 |
-| Shire | 142 | 85.9 | 14.1 | 801 |
-| Viatris | 138 | 88.4 | 11.6 | 825 |
+This analysis evaluates the operational efficiency, trial volume, and success rates of late-stage (Phase 2/3 & Phase 3) clinical trials across top biopharmaceutical sponsors. 
 
-# TODO ADD ANALYSIS
+### Key Findings
+- **GSK**: Demonstrated high volume (790 trials) alongside high efficiency, maintaining a 95% success rate and a low average trial duration of 682 days.
+- **Organon & Co**: Recorded the highest overall efficiency (96% success, 581 days), indicating potential execution speed advantages for specialized pipelines, in this case women's health.
+- **Novartis**: Handled the highest total throughput in the industry (891 trials) while maintaining a 90% success rate and an industry-average trial duration of 974 days.
+
+### Data Context and Interpretation
+Success metrics in clinical trials are heavily influenced by corporate strategy and target therapeutic areas:
+
+- **Target Risk Profiles (Pfizer, Gilead)**: Lower relative success rates (82%) correlate with portfolios focused on complex, novel modalities. Higher failure rates are a likely byproduct of more ambitious targets rather than operational bottlenecks.
+- **Disease Area Impacts (BMS, Roche)**: The longest average trial durations (BMS: 1,569 days; Roche: 1,485 days) reflect oncology-primary portfolios. These trials require multi-year trackig of endpoints like overall survival rate (OS) and progression-free survival rate (PFS).
 
 ## Reproducing the Environment
 
