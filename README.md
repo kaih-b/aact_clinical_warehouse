@@ -5,6 +5,10 @@ This project is a containerized end-to-end data pipeline designed to transform r
 
 The project serves as a proof-of-concept for a full-stack data lifecycle, moving from infrastructure-as-code and automated ETL to relational modeling and culminating with an industry-style visualization in Tableau.
 
+## Final Product: The Efficiency Matrix
+[![Biopharma R&D Efficiency Dashboard](export/tableau_dashboard.png)](https://public.tableau.com/views/BiopharmaRDEfficiencyCompetitiveAnalysis/BiopharmaRD)
+
+
 ## Project Phases & Milestones
 
 | Phase | Milestone | Core Tech | Key Deliverable |
@@ -14,6 +18,7 @@ The project serves as a proof-of-concept for a full-stack data lifecycle, moving
 | **3** | **Data Modeling** | SQL | Relational mapping of `studies`, `sponsors`, `interventions`, and `designs`. |
 | **4** | **Advanced Analytics**| SQL (CTEs, Window Functions) | Modular views and strategic queries for competitor benchmarking. |
 | **5** | **Optimization & Bridge**| SQL (Indexes), Python | Indexing for performance and automated CSV export for BI tools. |
+| **6** | **Visualization** | Tableau Public | Interactive dashboard. |
 
 ## Relationships Between Core AACT Tables
 
