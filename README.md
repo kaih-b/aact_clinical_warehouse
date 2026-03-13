@@ -75,20 +75,25 @@ To ensure the project remains reproducible, the system includes a `Makefile` dri
 
 This project is built to be entirely reproducible via the provided `Makefile`.
 
-1.  **Create the Database:**
+1. **Clone the Repository**
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
+    ```
+2.  **Create the Database:**
     ```bash
     make up
     ```
-2.  **Load Data:** Place AACT `.txt` files for `studies`, `sponsors`, `interventions`, and `designs` in `data/` and run the ETL pipeline:
+3.  **Load Data:** Place AACT `.txt` files for `studies`, `sponsors`, `interventions`, and `designs` in `data/` and run the ETL pipeline:
     ```bash
     make etl
     ```
-3.  **Optimize & Run Analytics:**
+4.  **Optimize & Run Analytics:**
     ```bash
     make optimize
     make analytics
     ```
-4.  **Export for BI:**
+5.  **Export for BI:**
     ```bash
     make export
     ```
