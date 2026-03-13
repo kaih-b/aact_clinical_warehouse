@@ -32,7 +32,7 @@ Success metrics in clinical trials are heavily influenced by corporate strategy 
 
 ## Relational Interpretation
 
-**Tables of Interest**: `studies`, `sponsors`, `interventions`, `design`
+**Tables of Interest**: `studies`, `sponsors`, `interventions`, `designs`
 
 ### Studies
 
@@ -77,8 +77,8 @@ This project is built to be entirely reproducible via the provided `Makefile`.
 
 1. **Clone the Repository**
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/kaih-b/aact_clinical_warehouse.git
+    cd aact_clinical_warehouse
     ```
 2.  **Create the Database:**
     ```bash
