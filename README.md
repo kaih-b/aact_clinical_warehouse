@@ -1,7 +1,7 @@
 # AACT Clinical Warehouse
 
 ## Summary
-This project is an end-to-end data pipeline that transforms raw clinical trial metadata into a competitive analysis of top pharmaceutical sponsors. Covering everything from automated infrastructure (Docker) and data processing (Python/ETL) to database modeling (PostgreSQL) and BI visualization (Tableau), the system processes 570,000+ records from the [AACT Database](https://aact.ctti-clinicaltrials.org/downloads) to identify trends in late-stage trial success, execution velocity, and operational efficiency.
+This project is an end-to-end data pipeline that transforms raw clinical trial metadata into a competitive analysis of top pharmaceutical sponsors. Covering everything from automated infrastructure (Docker) and data processing (Python/ETL) to database modeling (PostgreSQL) and BI visualization (Tableau), the system processes 570,000+ records from the [AACT Database](https://aact.ctti-clinicaltrials.org/downloads) to identify trends in late-stage trial success rates (i.e. 1 - termination rate), execution velocity, and operational efficiency.
 
 ## Final Product
 [![Biopharma R&D Efficiency Dashboard](export/tableau_dashboard.png)](https://public.tableau.com/app/profile/kai.henrikson.brandt/viz/Biopharma_RD_Analysis/BiopharmaRD)
@@ -17,7 +17,7 @@ This project is an end-to-end data pipeline that transforms raw clinical trial m
 Success metrics in clinical trials are heavily influenced by corporate strategy and target therapeutic areas:
 
 - **Target Risk Profiles (Pfizer, Gilead)**: Lower relative success rates (82%) correlate with portfolios focused on complex, novel modalities. Higher failure rates are a likely byproduct of more ambitious targets rather than operational bottlenecks.
-- **Disease Area Impacts (BMS, Roche)**: The longest average trial durations (BMS: 1,569 days; Roche: 1,485 days) reflect oncology-primary portfolios. These trials require multi-year tracking of endpoints like overall survival rate (OS) and progression-free survival rate (PFS).
+- **Disease Area Impacts (BMS, Roche)**: The longest average trial durations (BMS: 1,569 days; Roche: 1,485 days) reflect oncology-primary portfolios. These trials require multi-year tracking of endpoints like overall survival (OS) and progression-free survival (PFS).
 
 ## Project Phases & Milestones
 
@@ -77,7 +77,7 @@ This project is built to be entirely reproducible via the provided `Makefile`.
 
 1.  **Clone the Repository**:
     ```bash
-    git clone https://github.com/kaih-b/aact_clinical_warehouse.git
+    git clone [https://github.com/kaih-b/aact_clinical_warehouse.git](https://github.com/kaih-b/aact_clinical_warehouse.git)
     cd aact_clinical_warehouse
     ```
 
@@ -86,15 +86,15 @@ This project is built to be entirely reproducible via the provided `Makefile`.
     make install
     ```
    
-4.  **Create the Database**:
+4.  **Initialize the Database**:
     ```bash
     make up
     ```
-5.  **Load Data**: Place AACT `.txt` files for `studies`, `sponsors`, `interventions`, and `designs` in `data/` and run the ETL pipeline:
+5.  **Load Data**: Create a `data/` directory and place [AACT files](https://aact.ctti-clinicaltrials.org/downloads) for `studies.txt`, `sponsors.txt`, `interventions.txt`, and `designs.txt` inside. Run the ETL pipeline:
     ```bash
     make etl
     ```
-6.  **Optimize & Run Analytics**:
+6.  **Optimize & Analyze**:
     ```bash
     make optimize
     make analytics
