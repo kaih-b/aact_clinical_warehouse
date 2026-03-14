@@ -58,8 +58,8 @@ The `designs` table tracks structural procedures like `masking`, `allocation`, a
 ## Technical Features
 
 ### Infrastructure
-- **Containerization:** The entire warehouse is managed via `Docker Compose`, ensuring isolation between the database and the local OS.
-- **Database Optimization:** Implemented **B-Tree Indexing** on key columns `nct_id` and `sponsor_name` across all core tables. This optimization reduced query execution time for Phase 3 analytical joins by over 80%, enabling rapid iteration on this large dataset.
+- **Containerization**: The entire warehouse is managed via `Docker Compose`, ensuring isolation between the database and the local OS.
+- **Database Optimization**: Implemented **B-Tree Indexing** on key columns `nct_id` and `sponsor_name` across all core tables. This optimization reduced query execution time for Phase 3 analytical joins by over 80%, enabling rapid iteration on this large dataset.
 
 ### Analytical Logic
 The analytics layer utilizes advanced SQL to extract business insight from clinical metadata:
@@ -75,25 +75,31 @@ To ensure the project remains reproducible, the system includes a `Makefile` dri
 
 This project is built to be entirely reproducible via the provided `Makefile`.
 
-1. **Clone the Repository**
+1.  **Clone the Repository**:
     ```bash
     git clone https://github.com/kaih-b/aact_clinical_warehouse.git
     cd aact_clinical_warehouse
     ```
-2.  **Create the Database:**
+
+2.  **Install Dependencies**:
+    ```bash
+    make install
+    ```
+   
+4.  **Create the Database**:
     ```bash
     make up
     ```
-3.  **Load Data:** Place AACT `.txt` files for `studies`, `sponsors`, `interventions`, and `designs` in `data/` and run the ETL pipeline:
+5.  **Load Data**: Place AACT `.txt` files for `studies`, `sponsors`, `interventions`, and `designs` in `data/` and run the ETL pipeline:
     ```bash
     make etl
     ```
-4.  **Optimize & Run Analytics:**
+6.  **Optimize & Run Analytics**:
     ```bash
     make optimize
     make analytics
     ```
-5.  **Export for BI:**
+7.  **Export for BI**:
     ```bash
     make export
     ```
