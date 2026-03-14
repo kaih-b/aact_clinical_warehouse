@@ -77,7 +77,7 @@ This project is built to be entirely reproducible via the provided `Makefile`.
 
 1.  **Clone the Repository**:
     ```bash
-    git clone [https://github.com/kaih-b/aact_clinical_warehouse.git](https://github.com/kaih-b/aact_clinical_warehouse.git)
+    git clone https://github.com/kaih-b/aact_clinical_warehouse.git
     cd aact_clinical_warehouse
     ```
 
