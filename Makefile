@@ -26,7 +26,6 @@ etl:
 validate:
 	cd src && python validate.py
 
-
 # Optimize the database with indexes
 optimize:
 	@echo "Creating database indexes..."
